@@ -1,8 +1,8 @@
 # 🐍 Python Beginner Tasks (1–50)
 
 ## Basics
-- [ ] Hello World script
-- [ ] Calculator (basic operations)
+- [x] Hello World script
+- [x] Calculator (basic operations)
 - [ ] Temperature converter (Celsius ↔ Fahrenheit)
 - [ ] Tip calculator
 - [ ] BMI calculator
