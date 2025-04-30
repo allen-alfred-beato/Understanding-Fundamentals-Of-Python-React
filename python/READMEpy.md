@@ -29,6 +29,7 @@
 
 ## Apps and Tools
 - [ ] Quiz app with multiple choice questions
+- [ ] Scarpe the web or steam for prices of games (GameScraper)
 - [ ] Simple contact book (CLI)
 - [ ] Todo list in the terminal
 - [ ] Alarm clock
