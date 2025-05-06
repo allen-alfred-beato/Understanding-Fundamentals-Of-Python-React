@@ -20,6 +20,21 @@ class Order:
             "Turon (2pcs)": 40.00,
             "Garlic Rice (single)": 35.00
         }
+       self.bengProducts = {
+          "espresso" : 
+                {
+                    "americano" : { 'm' : 1, 'x' : 2, 'xl' : 3, 'hot': 4 },
+                    "caffe_latte" : { 'm' : 1, 'x' : 2, 'xl' : 3, 'hot': 4 },
+                },
+           "cold_brew" : {
+                    "black" : { 'm' : 1, 'x' : 2, 'xl' : 3},
+                    "mocha" : { 'm' : 1, 'x' : 2, 'xl' : 3},
+               },
+            "milk_based" : {
+                    "matcha" : { 'm' : 1, 'x' : 2, 'xl' : 3},
+                    "chocolate_match" : { 'm' : 1, 'x' : 2, 'xl' : 3},
+               },        
+       }
        
     def __str__(self):
         return f"Welcome to {self.storeName}!"

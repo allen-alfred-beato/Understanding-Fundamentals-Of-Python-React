@@ -33,6 +33,7 @@ doTip = input("Do you want to add a tip? y/n ").lower()
 # amountTip = 
 
 tip = Utilities.delayFunction(Order.askTip, 2) if doTip == "y" else 0
+
 print(tip)
 print(products)
 order.checkout(products, tip)
