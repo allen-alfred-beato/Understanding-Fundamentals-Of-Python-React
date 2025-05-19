@@ -1,32 +1,21 @@
 # SIMPLE ORDERING  TIP CALCULATOR
-"""
-    Input the orders
-    Calculate the total
-    Calculate tip if given
-"""
+
 class Order:
+    """
+        Input the orders
+        Calculate the total
+        Calculate tip if given
+    """
     
     def __init__(self):
        self.storeName = "ALRA"
-       self.foodPrices =  {
-            "Adobo": 150.00,
-            "Sinigang": 180.50,
-            "Lechon Kawali": 220.75,
-            "Pancit Bihon": 120.00,
-            "Lumpia Shanghai (6pcs)": 80.00,
-            "Chicken Inasal": 165.25,
-            "Sisig": 190.00,
-            "Halo-Halo": 95.50,
-            "Turon (2pcs)": 40.00,
-            "Garlic Rice (single)": 35.00
-        }
        self.bengProducts = {
-          "espresso" : 
+            "espresso" : 
                 {
                     "americano" : { 'm' : 1, 'x' : 2, 'xl' : 3, 'hot': 4 },
                     "caffe_latte" : { 'm' : 1, 'x' : 2, 'xl' : 3, 'hot': 4 },
                 },
-           "cold_brew" : {
+            "cold_brew" : {
                     "black" : { 'm' : 1, 'x' : 2, 'xl' : 3},
                     "mocha" : { 'm' : 1, 'x' : 2, 'xl' : 3},
                },
@@ -35,15 +24,52 @@ class Order:
                     "chocolate_match" : { 'm' : 1, 'x' : 2, 'xl' : 3},
                },        
        }
+       self.askOrder()
+       
        
     def __str__(self):
         return f"Welcome to {self.storeName}!"
     
+    def askOrder(self):
+        """ 
+            Ask the customer for their order.
+        """
+        orders = []
+        orderSelection = list(self.bengProducts.keys())
+        state = True
+        option = 1
+        
+        for i in self.bengProducts.keys():
+            print(f"[{option}]" + i)
+            option += 1        
+                
+        print(orderSelection)
+        
+        while(state):
+           selectedCategory = int(input("Select Item Number: "))
+           if (selectedCategory - 1) == -1:
+               state = False
+           elif selectedCategory < len(orderSelection) + 1:
+               self.listOrder(orderSelection[selectedCategory - 1])
+           else:
+               print("inavlid input!")
+                       
+                       
+    def listOrder(self, key):
+        """Display the selected category
+
+        Args:
+            key (_type_): _description_
+        """
+        
+        products = list(self.bengProducts[key].keys())
+        print(products)
+    
     def askTip():
         """display the input field to ask the amount of the tip
 
-        Returns:
-            tip (float): amount of the tip
+            Returns:
+                tip (float): amount of the tip
         """
         
         return float(input("Tip Amount: "))
@@ -51,32 +77,33 @@ class Order:
 
 
     def displayOrder(self, products):
-        bill = 0
-        
+
         """process the order for checkout
 
-        Args:
-            products (list): _description_
-            
-        Return:
-            bill (float): _description_
+            Args:
+                products (list): _description_
+                
+            Return:
+                bill (float): _description_
         """
-        
+
+        bill = 0
+                
         for productKeys in products:
             bill += self.foodPrices[productKeys]        
         return print(bill)
     
     def checkout(self, products, tip):
-        bill = 0
-        
+
         """process the order for checkout
 
-        Args:
-            products (list): _description_
-            
-        Return:
-            bill (float): _description_
+            Args:
+                products (list): _description_
+                
+            Return:
+                bill (float): _description_
         """
+        bill = 0
         
         for productKeys in products:
             bill += self.foodPrices[productKeys]
