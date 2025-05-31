@@ -61,9 +61,10 @@ class Order:
         Args:
             key (_type_): _description_
         """
-        
+        state = True
         products = list(self.bengProducts[key].keys())
-        print(products)
+        while (state):    
+            print(products)
     
     def askTip():
         """display the input field to ask the amount of the tip
